@@ -1,5 +1,7 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/layouts/Navbar";
+import Footer from "@/components/layouts/Footer";
 
 const poppins = Poppins({
   weight: ["100", "200", "400", "500", "600",  "800"],
@@ -16,7 +18,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.className} antialiased`}
       >
-        {children}
+        <header className="py-2 max-w-11/12 mx-auto"><Navbar /></header>
+        <main className="py-2 max-w-11/12 mx-auto">
+          {children}
+        </main>
+        <footer><Footer /></footer>
       </body>
     </html>
   );
