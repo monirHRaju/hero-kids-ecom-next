@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { FaStar, FaShoppingCart } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
@@ -37,7 +38,7 @@ const ProductCard = ({ product }) => {
       </figure>
 
       {/* Content */}
-      <div className="card-body p-4">
+      <Link href={`/products/${title}`} className="card-body p-4 cursor-pointer">
         <h2 className="card-title text-base line-clamp-2">
           {title}
         </h2>
@@ -75,7 +76,7 @@ const ProductCard = ({ product }) => {
             Add to Cart
           </button>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
