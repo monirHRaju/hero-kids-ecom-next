@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FaStar, FaShoppingCart } from "react-icons/fa";
+import { FaStar, FaShoppingCart, FaInfoCircle } from "react-icons/fa";
+
 
 const ProductCard = ({ product }) => {
   const {
@@ -78,7 +79,7 @@ const ProductCard = ({ product }) => {
           </button>
           
           <Link href={`/products/${_id}`} className="btn btn-primary btn-sm w-full">
-            <FaShoppingCart className="mr-2" />
+            <FaInfoCircle className="mr-2" />
             View Details
           </Link>
 
