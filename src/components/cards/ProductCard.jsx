@@ -6,6 +6,8 @@ import { FaStar, FaShoppingCart } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
   const {
+    
+    _id,
     title,
     image,
     price,
@@ -38,7 +40,7 @@ const ProductCard = ({ product }) => {
       </figure>
 
       {/* Content */}
-      <Link href={`/products/${title}`} className="card-body p-4 cursor-pointer">
+      <Link href={`/products/${_id}`} className="card-body p-4 cursor-pointer">
         <h2 className="card-title text-base line-clamp-2">
           {title}
         </h2>
