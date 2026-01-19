@@ -10,13 +10,20 @@ export const metadata = {
 };
 
 const ProductsPage = async () => {
-  const allProducts = await getProducts();
-  // console.log(allProducts)
+  const products = await fetch("http://localhost:5000/products", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    }).then((res) => res.json());
+
+  // const products = await getProducts();
+  // console.log(products)
   return (
     <div>
             <h1 className="text-2xl font-bold mb-4">Our Products</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {allProducts.map((product) => (
+                {products.map((product) => (
                     <ProductCard key={product._id} product={product} />
                 ))}
             </div>

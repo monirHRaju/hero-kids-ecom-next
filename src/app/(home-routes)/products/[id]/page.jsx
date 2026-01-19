@@ -7,7 +7,37 @@ import { FaCartPlus, FaStar } from "react-icons/fa";
 
 export async function generateMetadata({ params }) {
   const { id } = await params;
-  const product = await getSingleProduct(id); // DB / API fetch
+  // const product = await getSingleProduct(id); // DB / API fetch
+
+  // get single product from API
+  async function getProduct(id) {
+    try {
+      const res = await fetch(`${process.env.API_URL}/products/${id}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // Optional but recommended in Next.js:
+        // cache: 'no-store',           // ← always fresh
+        // next: { revalidate: 3600 }   // ← ISR every 1 hour
+      });
+
+      if (!res.ok) {
+        throw new Error(`Failed to fetch product: ${res.status}`);
+      }
+
+      const product = await res.json();
+      return product[0];
+    } catch (error) {
+      console.error("Error fetching product:", error);
+      return null; // ← or throw error — depends on your needs
+      // throw new Error("Product not found");
+    }
+  }
+
+  const product = await getProduct(id);
+
+  // console.log("Metadata Product:", product);
 
   return {
     title: product.title,
@@ -41,7 +71,7 @@ export async function generateMetadata({ params }) {
 const ProductDetails = async ({ params }) => {
   const { id } = await params;
   const product = await getSingleProduct(id);
-  console.log(product);
+  // console.log(product);
 
   const {
     title,
