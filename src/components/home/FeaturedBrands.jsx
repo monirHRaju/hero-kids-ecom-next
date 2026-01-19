@@ -8,8 +8,8 @@ const brands = [
   { name: "Philips Avent", logo: "https://i.ibb.co.com/r2ZZ1c6V/philips-avent.jpg", slug: "philips-avent" },
   { name: "Munchkin", logo: "https://i.ibb.co.com/6hVxYg1/munchkin.jpg", slug: "munchkin" },
   { name: "Pigeon", logo: "https://i.ibb.co.com/SwBWScxy/pigeon.png", slug: "pigeon" },
-  { name: "R for Rabbit", logo: "/brands/r-for-rabbit.svg", slug: "r-for-rabbit" },
-  { name: "LuvLap", logo: "/brands/luvlap.svg", slug: "luvlap" },
+  { name: "R for Rabbit", logo: "https://i.ibb.co.com/QFr4sjqx/r-for-rabbit.jpg", slug: "r-for-rabbit" },
+  { name: "LuvLap", logo: "https://i.ibb.co.com/zWcHR5VX/luvlap.png", slug: "luvlap" },
 ];
 
 
@@ -50,11 +50,6 @@ export default function FeaturedBrands() {
           ))}
         </div>
 
-        <div className="text-center mt-10 md:mt-14">
-          <a href="/brands" className="btn btn-outline btn-primary btn-md md:btn-lg">
-            See All Brands →
-          </a>
-        </div>
       </div>
     </section>
   );
