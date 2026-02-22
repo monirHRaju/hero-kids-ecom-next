@@ -1,4 +1,5 @@
-# Hero Kidzz - Project Assets
+# Hero Kidz 
+Live https://hero-kids-ecom-next.vercel.app/
 <img src="assets/hero.png">
 ## Overview
 
